@@ -1,10 +1,8 @@
-body{
-  position: absolute;
-  transform: translate(-50%,-50%);
-  left: 50%;
-  top: 50%;
-  background: #201f1fd2;
-}
-.empdetails{
-  color:rgb(255, 255, 255);
+* {
+  padding: 0;
+  margin: 0;
+
+  color: rgb(27, 27, 27);
+
+  font-size: 23px;
 }

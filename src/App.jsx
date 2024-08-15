@@ -1,24 +1,16 @@
-// import React from 'react'
-import Anothercom from './anothercom'
-import './App.css'
+import React from "react";
+import Parent from "./component/Parent";
 
-function App() {
+import Usereducerhook from "./Usereducerhook";
 
-  // objects value to pass to props on anothercom compononet
-   let emp = {
-    name:"raju",
-    age:20,
-    place:"Erode"
-   }
+const App = () => {
   return (
-    <>
-      <h2> HELLO IM MAIN APP</h2>
-     
-      <Anothercom name={emp.name} age = {emp.age} place ={emp.place} />
-    </>
-  )
-}
+    <div>
+      App
+      <Parent></Parent>
+      {/* <Usereducerhook /> */}
+    </div>
+  );
+};
 
-
-
-export default App
+export default App;
