@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+<body>
+    
+<script>     
+   class Person{
+    #name = "prasad";
+    #salary = 2000
+
+    set empname(name){
+        this.#name = "user name "+name;
+
+    }
+    get showname(){
+        return this.#name+"and emp salary "+this.#empsalary();
+    }
+
+    #empsalary(){
+        this.#salary = this.#salary+200;
+        return '$'+this.#salary
+    }
+
+   }
+
+    class name extends Person{
+       
+        res(){
+            console.log("hello");
+        }
+
+
+    }
+
+    let newclas = new name()
+    console.log(newclas.res());
+
+  class emp{
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+        return "Name is"+this.name+"and age is "+this.age;
+
+    }
+
+  }
+
+  let employee = new emp("aurn",29);
+  console.log(employee);
+
+   
+     
+</script>
+</body>
+</html>
