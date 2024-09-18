@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exception handling</title>
+</head>
+<body>
+    
+    <h2>expection handling</h2>
+
+    <script>
+
+
+//    try {
+//     let ans = result('a',0);
+//     if(ans===Infinity){
+//         throw new Error("divided by 0 so its infinity")
+//     }
+//      console.log(ans);   
+//    } catch (error) {
+//        console.log(error.message);
+//    }
+
+        
+// function result(inp1,inp2){
+//      if(isNaN(inp1)  || isNaN(inp2)){
+//         let error = new Error("enter valid no")
+//         error.name = "data type error"
+//         error.message = "you types one char"
+//         throw error;
+//      }
+
+
+//     return inp1/inp2;
+// }
+
+  try{
+    num = prompt("ENter a number");
+    if(isNaN(num)){
+        throw "ENter a valid no"
+    }
+     confirm(num**82)
+  }
+catch(error){ 
+    prompt(errorh)
+}
+    </script>
+</body>
+</html>
