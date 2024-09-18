@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+</head>
+<body>
+    
+    <head>math fuction</head>
+
+    <script>
+
+        let a=2;
+        a= Math.PI;
+        console.log(a.toFixed(2));
+
+        console.log(Math.round(5.667));
+        console.log(Math.ceil(5.667));
+        console.log(Math.sqrt(64));
+        console.log(Math.abs(-64));
+        console.log(Math.trunc(64.65778));
+        console.log(Math.floor(64.65778));
+        console.log(Math.pow(2,8));
+        console.log(Math.min(2,8,56732,32));
+        console.log(Math.max(2,8,56732,32));
+        console.log(Math.floor(Math.random()*6));
+
+
+        //  inner function
+
+//         function persons(firstperson,secperon){
+//              function getages(first,second){
+//                 let fulldetails = first+": "+second
+//                return  fulldetails;
+//             }
+//         //    let full =  getages(firstperson,secperon)
+//            return getages(firstperson,secperon)
+//         }
+//       let getdetail =   persons("arun","kumar")
+// console.log(getdetail);
+
+let person1={
+    name:'prasad',age:20
+}
+let person2={
+     place:'bhvani',
+     pincode:6325098
+}
+
+let twoperson = {...person1,...person2,country:"india"}
+console.log(twoperson);
+
+// sum of value
+
+  function sumofvalue(...val){
+    sum = 0;
+    for (let index = 0; index<val.length; index++) {
+       sum = sum+val[index];
+       
+    }
+    console.log("total :",sum);
+  }
+
+  let vales= [1,2,3,4,5,43,24,325,43,5243]
+  sumofvalue(...vales)
+    </script>
+</body>
+</html>
