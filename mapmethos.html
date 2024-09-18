@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h2>map</h2>
+</head>
+<body>
+    
+
+    <script>
+// change case
+    let names = ['Arun','arun','sartth','rafrast','sunil']
+
+      let touppcase = names.map(name=>name.toUpperCase());
+      let tolowercase = names.map(name=>name.toLowerCase());
+      console.log(touppcase);
+      console.log(tolowercase);
+   
+  let nums = [1,2,3,4,5,6,6,6]
+  let doubled = nums.map(num=>{
+    let above5 = num>5?num:"false"
+    // console.log(above5);
+    return above5
+  } )
+
+  let filternamebyarun = names.filter((name)=>{
+    let lowername = name.toLowerCase();
+    return lowername.length>5;
+  })
+console.log(filternamebyarun);
+
+
+  let shufflenos = [12,3,4214,54,33,55,67,23]
+
+  let evenno = shufflenos.filter(no=>no%2===1)
+  console.log(evenno);
+
+    let fakeemployes = [
+        {name:"arun",age:"20"},
+        {name:"raju",age:"12"},
+        {name:"arun",age:"23"}
+
+    ]
+
+    let above20age = fakeemployes.filter(emp=>emp.name=="raju")
+    console.log(above20age);
+
+    let createcount =()=>{
+        let count = 0;
+        return ()=>{
+            count++
+            return count;
+        }
+    }
+
+    let countfun = createcount()
+    console.log(countfun());
+    console.log(countfun());
+    console.log(countfun());
+
+    // nested function
+
+    // function outer(){
+    //     var value = "hell iam innerfunscore";
+    //     console.log(value);
+    //     function inner(){
+    //         this.innertext = "hello iam inner as well outer"
+    //         console.log(value+" "+"iam inner functon");
+    //     } 
+    //     inner()
+    // }
+    // outer()
+
+    // foreach metho
+
+    let original = [1,24,4,5,436,57,65,87]
+    let copy = []
+// console.log(original,copy);
+    // original.forEach((val)=>{
+    //    copy.push(val/2)
+
+    //  })
+
+
+    //  console.log(copy);       
+
+    // //  find max value
+    // let min = valuestofind[0];
+    
+    // let maxvalue = valuestofind.forEach(val=>{
+    //     if(val<=min){
+    //         min = val;
+    //     }
+       
+    // })
+    // console.log(min);
+
+    // // to cahnge uppercase
+
+    // let lowername = ['arun','kumar','raju','siva'];
+
+    // lowername.forEach((name,index)=>{
+//     //     lowername[index]= name.toLocaleUpperCase();
+//     // })
+    
+//     // console.log(lowername);
+//     let valuestofind = [36,4,9,144,89,6];
+
+//      valuestofind.map((value,index)=>{
+//         valuestofind[index] = Math.sqrt(value)
+//     })
+// //  console.log(valuestofind);
+
+  
+
+//   let emp_status = employees.map(emp=>({
+//     ...emp,
+//     status:emp.age>=20?"eligible ":"not eligible"
+//   }))
+
+//   console.table(emp_status)
+   
+//   let namyy = ['arjun',"diva","kumar"]
+//   console.log(namyy);
+//   let capital = namyy.map(name=>name.toUpperCase())
+
+//   console.log(capital);
+
+  let employees = [
+    {name:'saran',age:23},
+    {name:'akshay',age:12},
+    {name:'sudhanran',age:19},
+  ]
+
+  let oneperon =  employees.map(emp=>{ return {name:emp.name,age:emp.age+3}})
+  console.log(oneperon);
+
+    
+    </script>
+</body>
+</html>
