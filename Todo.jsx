@@ -1,13 +1,16 @@
 import React from "react";
 
 const Todo = ({ todo, additem }) => {
+  console.log("todo called");
+
   return (
     <div>
-      {todo.map((item, ind) => (
-        <p key={ind}>{item}</p>
+      <p>Lists</p>
+      {todo.map((item, i) => (
+        <p key={i}>{item}</p>
       ))}
-      <br />
-      <button onClick={additem}>Add item</button>
+
+      <button onClick={additem}>add item</button>
     </div>
   );
 };
