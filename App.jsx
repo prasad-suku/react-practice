@@ -1,115 +1,96 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [input, setinput] = useState({
-    name: "",
-    email: "@gmail.com",
-    phone: "+91",
-    message: "",
-    checkbox: "false",
-  });
-
-  const handlesubmit = (e) => {
-    e.preventDefault();
-    alert("submited");
-    console.log(input);
-  };
-
-  const handleChange = (e) => {
+  const [input, setinput] = useState({});
+  let handlechange = (e) => {
     setinput((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
+
+  let handlesubmit = (e) => {
+    e.preventDefault();
+    alert("submitted");
+    console.log(input);
+    setinput({});
+  };
   return (
     <div>
-      <h2>Form Handling</h2>
-      <form onSubmit={(e) => handlesubmit(e)}>
-        name :{" "}
-        <input
-          type="text"
-          name="name"
-          value={input.name}
-          onChange={handleChange}
-        />
-        <br />
-        Email :{" "}
-        <input
-          type="text"
-          name="email"
-          value={input.email}
-          onChange={handleChange}
-        />
-        <br />
-        phone :{" "}
-        <input
-          type="text"
-          name="phone"
-          value={input.phone}
-          onChange={handleChange}
-        />
-        <br />
-        message :{" "}
-        <textarea
-          type="text"
-          name="message"
-          value={input.message}
-          onChange={handleChange}
-        />
-        <br />c lang{" "}
-        <input
-          type="checkbox"
-          name="checkbox"
-          onChange={handleChange}
-          defaultChecked={true}
-        />
-        c++ lang{" "}
-        <input type="checkbox" name="checkbox" defaultChecked={false} />
-        java lang{" "}
-        <input type="checkbox" name="checkbox" defaultChecked={true} />
-        <br />
-        radio option
-        <label htmlFor="option1">
-          option1{" "}
+      <form onSubmit={handlesubmit}>
+        <label htmlFor="feedback">
+          message :{" "}
+          <textarea
+            name="feedback"
+            onChange={handlechange}
+            cols={22}
+            rows={7}
+            id=""
+          ></textarea>
+        </label>
+        <label htmlFor="name">
+          Name :
           <input
-            type="radio"
-            name="radio"
-            onChange={handleChange}
-            defaultChecked={true}
+            type="text"
+            name="name"
+            onChange={handlechange}
+            value={input.name}
           />
         </label>
         <br />
-        <label htmlFor="option1">
-          option1{" "}
+        <label htmlFor="password">
+          password :
           <input
-            type="radio"
-            name="radio"
-            value="option 1"
-            onChange={handleChange}
-            defaultChecked={false}
+            type="text"
+            name="password"
+            onChange={handlechange}
+            value={input.password}
           />
         </label>
         <br />
-        <label htmlFor="option1">
-          option1{" "}
+        <label htmlFor="radio">
+          choose :{" "}
           <input
             type="radio"
-            value="option 2"
-            name="radio"
-            onChange={handleChange}
-            defaultChecked={false}
-          />
+            name="degree"
+            onChange={handlechange}
+            value="bca"
+          />{" "}
+          BCA
         </label>
-        <br />
-        <label htmlFor="options">
-          Select options
-          <select name="selected option" id="" onChange={handleChange}>
-            <option value="select"> default</option>
-            <option value="mango"> mango</option>
-            <option value="orange"> orange</option>
-            <option value="grapes"> grapes</option>
-          </select>
+        <label htmlFor="radio">
+          <input
+            type="radio"
+            name="degree"
+            value="mca"
+            onChange={handlechange}
+          />{" "}
+          MCA
         </label>
-        <button type="submit">SUBMIT</button>
+        <label htmlFor="radio">
+          <input
+            type="radio"
+            name="degree"
+            value="btech"
+            onChange={handlechange}
+          />{" "}
+          BTEch
+        </label>
+
+        {/* options */}
+
+        <select name="Fruid" id="" onChange={handlechange}>
+          <option value="apple">apple</option>
+          <option value="orange">orange</option>
+          <option value="banana">banana</option>
+          <option value="papaya">papaya</option>
+        </select>
+
+        <button
+          type="
+      submit"
+        >
+          Sumbit
+        </button>
       </form>
     </div>
   );
