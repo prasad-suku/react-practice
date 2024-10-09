@@ -1,45 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
+import useLocalstorage from "./useLocalstorage";
 import "./index.css";
-import { FaStar } from "react-icons/fa";
-
-const App = ({ no_ofstars = 7 }) => {
-  const [rating, setrating] = useState(0);
-  const [hover, sethover] = useState(0);
-  // hadleclick function
-
-  const handleclick = (ind) => {
-    setrating(ind);
-    console.log(ind);
-  };
-
-  // handlemousehover
-  const handlemousehover = (ind) => {
-    sethover(ind);
-    console.log(ind);
-  };
-
-  // handlemouseleave
-  const handlemouseleave = () => {
-    sethover(rating);
+const App = () => {
+  const [color, setcolor] = useLocalstorage("theme", "dark");
+  let changetheme = () => {
+    setcolor(color === "dark" ? "white" : "dark");
   };
   return (
-    <div>
-      <div className="star-rating">
-        {[...Array(no_ofstars)].map((_, ind) => {
-          ind += 1;
-          return (
-            <FaStar
-              size={70}
-              className={ind <= (rating || hover) ? "active" : "inactive"}
-              key={ind}
-              onClick={() => {
-                handleclick(ind);
-              }}
-              onMouseEnter={() => handlemousehover(ind)}
-              onMouseLeave={() => handlemouseleave()}
-            />
-          );
-        })}
+    <div className="light-dark-theme" data-theme={color}>
+      <div className="container">
+        <h3>Hello world !!</h3>
+        <button onClick={changetheme}>Change Theme</button>
       </div>
     </div>
   );
